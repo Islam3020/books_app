@@ -10,19 +10,16 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Container(
-          alignment: Alignment.center,
-          height: 56,
-          width: double.infinity,
-          decoration: BoxDecoration(
-              color:  AppColors.primaryColor,
-              borderRadius: BorderRadius.circular(8)),
-          child:  Text(
-            title,
-            style:const TextStyle(color: Colors.white, fontSize: 20),
-          ),
+      child: Container(
+        alignment: Alignment.center,
+        height: 56,
+        width: double.infinity,
+        decoration: BoxDecoration(
+            color:  AppColors.primaryColor,
+            borderRadius: BorderRadius.circular(8)),
+        child:  Text(
+          title,
+          style:const TextStyle(color: Colors.white, fontSize: 20),
         ),
       ),
     );

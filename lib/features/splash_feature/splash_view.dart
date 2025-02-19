@@ -16,25 +16,26 @@ class SplashView extends StatelessWidget {
             image: DecorationImage(
                 image: AssetImage('assets/image/bookia_background.jpeg'),
                 fit: BoxFit.cover)),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Order Your Book Now!',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
-            ),
-            const SizedBox(
-              height: 200,
-            ),
-            CustomButton(title: 'Login',onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LoginView()));
-            },),
-            
-            InkWell(onTap: () {
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Order Your Book Now!',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+              ),
+              const SizedBox(
+                height: 200,
+              ),
+              CustomButton(title: 'Login',onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LoginView()));
+              },),
+              const SizedBox(height: 20,),
               
-            },
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
+              InkWell(onTap: () {
+                
+              },
                 child: Container(
                   alignment: Alignment.center,
                   height: 56,
@@ -47,9 +48,9 @@ class SplashView extends StatelessWidget {
                     style: TextStyle(color: Colors.black, fontSize: 20),
                   ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
