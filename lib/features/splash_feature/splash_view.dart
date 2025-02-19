@@ -1,3 +1,6 @@
+
+import 'package:books_app/features/auth_feature/views/login_view.dart';
+import 'package:books_app/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatelessWidget {
@@ -13,26 +16,39 @@ class SplashView extends StatelessWidget {
             image: DecorationImage(
                 image: AssetImage('assets/image/bookia_background.jpeg'),
                 fit: BoxFit.cover)),
-        child:  Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [const Text('Order Your Book Now!',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.w400
-          )
-          ,
-          
-          ),
-          const SizedBox(height: 200,),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Container(
-              height: 56,
-              width: double.infinity,
-              decoration: BoxDecoration(color:const Color(0xffBFA054),
-              borderRadius: BorderRadius.circular(16)),
+          children: [
+            const Text(
+              'Order Your Book Now!',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
             ),
-          )
+            const SizedBox(
+              height: 200,
+            ),
+            CustomButton(title: 'Login',onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LoginView()));
+            },),
+            
+            InkWell(onTap: () {
+              
+            },
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 56,
+                  width: double.infinity,
+                  decoration: BoxDecoration(border: Border.all(color: Colors.black),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8)),
+                  child: const Text(
+                    'Register',
+                    style: TextStyle(color: Colors.black, fontSize: 20),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
