@@ -1,4 +1,5 @@
 import 'package:books_app/features/auth_feature/register_view.dart';
+import 'package:books_app/features/auth_feature/views/forgot_password.dart';
 import 'package:books_app/widgets/custom_button.dart';
 import 'package:books_app/widgets/custom_text_form_field.dart';
 
@@ -44,7 +45,8 @@ class _LoginViewState extends State<LoginView> {
               const SizedBox(
                 height: 20,
               ),
-              CustomTextFormField(hintText: 'Enter your email',
+              CustomTextFormField(
+                hintText: 'Enter your email',
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your email';
@@ -76,7 +78,7 @@ class _LoginViewState extends State<LoginView> {
                     hintText: 'Enter your password',
                     hintStyle: const TextStyle(color: Colors.grey)),
                 validator: (value) {
-                  if(value==null||value.isEmpty){
+                  if (value == null || value.isEmpty) {
                     return 'Please enter your password';
                   }
                   return null;
@@ -86,7 +88,10 @@ class _LoginViewState extends State<LoginView> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>  ForgotPassword()));
+                      },
                       child: const Text(
                         'Forgot Password?',
                         style: TextStyle(color: Colors.grey),
@@ -141,7 +146,8 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const RegisterView()));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const RegisterView()));
                     },
                     child: const Text(
                       'Register now',
